@@ -7,21 +7,25 @@ char转int:
 容量:
   string.size()==string.length();
 寻找:
-  size_type/unsigned int find(str="str",pos=0); //函数从位置pos开始搜索,返回str所在的位置，如果没有找到则返回string::npos(-1)
-  size_type/unsigned int find_first_of(str="str"); //函数返回string中第一次出现属于str中字符的位置
-  size_type/unsigned int find_last_of(str="str"); //函数返回string中最后一次出现属于str中字符的位置置
-  size_type/unsigned int find_first_not_of(str="str"); //函数返回string中第一次出现不属于str中字符的位置
-  size_type/unsigned int find_last_not_of(str="str"); //函数返回string中最后一次出现不属于str中字符的位置
-  size_type/unsigned int rfind(str="str",pos=0) //从pos开始反向查找str所在的位置
+  size_t/unsigned int find(str="str",pos=0); //函数从位置pos开始搜索,返回str所在的位置，如果没有找到则返回string::npos(-1)
+  size_t/unsigned int find_first_of(str="str", pos=0); //函数从位置pos开始搜索,返回string中第一次出现属于str中字符的位置
+  size_t/unsigned int find_last_of(str="str", pos=0); //函数从位置pos开始搜索,返回string中最后一次出现属于str中字符的位置置
+  size_t/unsigned int find_first_not_of(str="str", pos=0); //函数从位置pos开始搜索,返回string中第一次出现不属于str中字符的位置
+  size_t/unsigned int find_last_not_of(str="str", pos=0); //函数从位置pos开始搜索,返回string中最后一次出现不属于str中字符的位置
+  size_t/unsigned int rfind(str="str",pos=0) //从pos开始反向查找str所在的位置
 插入:
   string.insert(pos=0,str="str"); //函数在pos位置插入字符串str;
-  string.push_back(char='str'); //函数在尾部插入字符str;
+  string.push_back(str='str'); //函数在尾部插入字符串str;
   stirng.append(str="str"); //函数在尾部插入字符串str;
 删除:
   string.erase(iterator first, iterator last); //删除字符串中迭代器区间[first,last)上所有字符
   string.erase(pos = 0,len = npos); //删除从pos开始，长度为len的字符串
+分割：
+  string.substr(size_t first, size_t last); 提取string中的从first位置开始，长度为last中的子串，无last默认为至末尾
 替换:
   string.swap(string str); //交换str与string中的内容
 排序:
   sort(iterator first, iterator last); //将first到last-1的位置上的元素进行排序
- 
+比较:
+  string.compare(string str); //比较string与str字符，完全相等返回0，完全不相等返回小于0，部分相等str为子串返回大于0
+  string.compare(size_t first, size_t last, string str, size_t strFirst, size_t strLast); //将string的fist-last字符串与str的first-last字符串进行比较
