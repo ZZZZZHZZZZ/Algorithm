@@ -1,0 +1,11 @@
+        int test = sqrt(num);
+        int max = 0;
+        for (int j = 2; j <= test+1; ++j) {
+            while (num % j == 0) {
+                num /= j;
+                max = max > j ? max : j;
+            }
+        }
+        if (max < num) {
+            max = num;
+        }
