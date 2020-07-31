@@ -1,0 +1,12 @@
+long long quickpow(long long a, long long b) {
+	a = a % 10007;
+	long long res = 1;
+	while (b) {
+		if (b&1) {
+			res = res * a % 10007;
+		}
+		a = (a * a) % 10007;
+		b >>= 1;
+	}
+	return res;
+}
